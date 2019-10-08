@@ -22,7 +22,7 @@ if( empty($nama_lengkap) || empty($email) || empty($phone) || empty($alamat) || 
 	header("location: ".BASE_URL."index.php?page=register&notif=require&$dataForm");
 }elseif($password != $re_password){
 	header("location: ".BASE_URL."index.php?page=register&notif=password&$dataForm");
-}elseif(mysqli_num_rows($query == 1)){
+}elseif(mysqli_num_rows($query) == 1){
 	header("location: ".BASE_URL."index.php?page=register&notif=email&$dataForm");
 }
 else{
