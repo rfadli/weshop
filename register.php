@@ -13,6 +13,8 @@
 				echo "<div class='notif'>Maaf, data kurang lengkap</div>";
 			}elseif($notif == "password"){
 				echo "<div class='notif'>Maaf, Password anda tidak sama</div>";
+			}elseif($notif == "email"){
+				echo "<div class='notif'>Maaf, email sudah terdaftar</div>";
 			}
 		?>
 
