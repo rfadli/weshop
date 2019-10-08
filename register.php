@@ -11,6 +11,8 @@
 
 			if($notif == "require"){
 				echo "<div class='notif'>Maaf, data kurang lengkap</div>";
+			}elseif($notif == "password"){
+				echo "<div class='notif'>Maaf, Password anda tidak sama</div>";
 			}
 		?>
 
