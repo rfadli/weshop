@@ -14,7 +14,7 @@
 			}elseif($notif == "password"){
 				echo "<div class='notif'>Maaf, Password anda tidak sama</div>";
 			}elseif($notif == "email"){
-				echo "<div class='notif'>Maaf, email sudah terdaftar</div>";
+				echo "<div class='notif'>Maaf, email yang anda masukan sudah terdaftar</div>";
 			}
 		?>
 
