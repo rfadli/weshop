@@ -134,3 +134,16 @@ body{
 	padding: 10px;
 	background: white;
 }
+/*tambahan untuk tombol button*/
+a.tombol-action {
+    float: right;
+    background: #1e5474;
+    padding: 4px 6px;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+}
+a.tombol-action:hover{
+	background: orange;
+}
+
