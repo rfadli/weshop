@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+include_once("function/koneksi.php");
 include_once("function/helper.php");
 //echo BASE_URL;
 $page = isset($_GET['page']) ? $_GET['page'] : false;

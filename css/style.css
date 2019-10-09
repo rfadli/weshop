@@ -116,7 +116,21 @@ body{
 	text-decoration: none;
 	padding: 10px 20px;
 }
-#menu-profile ul li a:hover{
+#menu-profile ul li a:hover,
+#menu-profile ul li a.active{
 	background: orange;
-	
+}
+/*
+#profile-content{
+	float: right;
+	width: 835px;
+	padding: 10px;
+	background: white;
+}
+*/
+#profile-content{
+	float: right;
+	width: 810px;
+	padding: 10px;
+	background: white;
 }
