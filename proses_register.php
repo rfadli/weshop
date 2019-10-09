@@ -26,8 +26,11 @@ if( empty($nama_lengkap) || empty($email) || empty($phone) || empty($alamat) || 
 	header("location: ".BASE_URL."index.php?page=register&notif=email&$dataForm");
 }
 else{
+	$password = md5($password);
 	mysqli_query($koneksi, "INSERT INTO user (level, nama, email, alamat, phone, password, status)
 									VALUES ('$level', '$nama_lengkap', '$email', '$alamat', '$phone', '$password', '$status') ");
+
+	header("location: ".BASE_URL."index.php?page=login");
 }
 
 ?>

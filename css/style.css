@@ -21,6 +21,7 @@ body{
 }
 #containter #header #menu #user{
 	float: left;
+	color: white;
 
 }
 #containter #header #menu #user a{
