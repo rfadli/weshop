@@ -6,8 +6,11 @@
 	$query = mysqli_query($koneksi, "SELECT * FROM barang");
 
 	if(mysqli_num_rows($query) == 0){
+
 		echo "<h3>Saat ini belum ada data Barang</h3>";
+
 	}else{
+
 		echo "<table class='table-list'>";
 
 		echo "<tr class='baris-title'>
@@ -31,6 +34,7 @@
 					</td>
 				 </tr>";
 		$no++;
+		
 		}
 
 		echo "</table>";

@@ -5,7 +5,6 @@ $nama_barang   = "";
 $spesifikasi   = "";
 $stok   	   = "";
 $harga 	  	   = "";
-//$gambar 	   = "";
 $status   	   = "";
 $button   	   = "Add";
 
