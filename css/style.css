@@ -188,7 +188,7 @@ a.tombol-action:hover{
     cursor: pointer;
     text-decoration: none;
     margin-right: 3px;
-    font-size: 9px;
+    font-size: 10px;
 }
 .tombol-action:hover{
     background: orange;

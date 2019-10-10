@@ -2,24 +2,36 @@
 $barang_id = isset($_GET['barang_id']) ? $_GET['barang_id'] : false;
 
 $nama_barang   = "";
+$kategori_id   = "";
 $spesifikasi   = "";
+$gambar   	   = "";
 $stok   	   = "";
 $harga 	  	   = "";
 $status   	   = "";
 $button   	   = "Add";
+$keterangan_gambar  = "";
 
-// if($barang_id){
+if($barang_id){
 
-// 	$query    = mysqli_query($koneksi, "SELECT * FROM barang WHERE barang_id='$barang_id'");
-// 	$row      = mysqli_fetch_assoc($query);
-// 	$barang   = $row['barang'];
-// 	$harga    = $row['harga'];
-// 	$status   = $row['status'];
-// 	$button   = "Update";
+	$query    	  = mysqli_query($koneksi, "SELECT * FROM barang WHERE barang_id='$barang_id'");
+	$row      	  = mysqli_fetch_assoc($query);
+	$nama_barang  = $row['nama_barang'];
+	$kategori_id  = $row['kategori_id'];
+	$spesifikasi  = $row['spesifikasi'];
+	$gambar    	  = $row['gambar'];
+	$stok    	  = $row['stok'];
+	$harga    	  = $row['harga'];
+	$status   	  = $row['status'];
+	$button   	  = "Update";
 
-//}
+	$keterangan_gambar = "(Klik pilih gambar jika ingin mengganti gambar di samping)";
+	$path_image = "<img src='".BASE_URL."images/barang/$gambar' style='width: 200px;vertical-align: middle;' />";
+}
 
 ?>
+
+<script src="<?php echo BASE_URL."js/ckeditor/ckeditor.js"; ?>"></script>
+
 <form action="<?php echo BASE_URL."module/barang/action.php?barang_id=$barang_id"; ?>" method="POST" enctype="multipart/form-data">
 
 	<div class="element-form">
@@ -31,7 +43,15 @@ $button   	   = "Add";
 				//$row = mysqli_fetch_assoc($query);
 				while ($row = mysqli_fetch_assoc($query)) {
 					
-					echo "<option value='$row[kategori_id]'>$row[kategori]</option>";
+					if($kategori_id == $row['kategori_id']){
+
+						echo "<option value='$row[kategori_id]' selected='true'>$row[kategori]</option>";
+
+					}else{
+
+						echo "<option value='$row[kategori_id]'>$row[kategori]</option>";
+					}
+					
 				}
 				?>
 			</select>
@@ -43,9 +63,9 @@ $button   	   = "Add";
 			<span><input type="text" name="nama_barang" value="<?php echo $nama_barang; ?>" /></span>
 	</div>
 
-	<div class="element-form">
-			<label>Spesifikasi</label>
-			<span><textarea name="spesifikasi"><?php echo $spesifikasi; ?></textarea></span>
+	<div style="margin-bottom: 10px;">
+			<label style="font-weight: bold;">Spesifikasi</label>
+			<span><textarea name="spesifikasi" id="editor"><?php echo $spesifikasi; ?></textarea></span>
 	</div>
 
 	<div class="element-form">
@@ -59,8 +79,10 @@ $button   	   = "Add";
 	</div>
 
 	<div class="element-form">
-			<label>Gambar Produk</label>
-			<span><input type="file" name="file" /></span>
+			<label>Gambar Produk <?php echo $keterangan_gambar; ?></label>
+			<span>
+				<input type="file" name="file" /> <?php echo $path_image; ?>
+			</span>
 	</div>
 
 	<div class="element-form">
@@ -76,3 +98,6 @@ $button   	   = "Add";
 	</div>
 
 </form>
+<script>
+	CKEDITOR.replace("editor");
+</script>

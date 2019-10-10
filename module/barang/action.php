@@ -9,9 +9,17 @@ $stok		 =  $_POST['stok'];
 $harga		 =  $_POST['harga'];
 $status		 =  $_POST['status'];
 $button		 =  $_POST['button'];
+$update_gambar = "";
 
-$nama_file = $_FILES["file"]["name"];
+if(!empty($_FILES["file"]["name"])){
+
+	$nama_file = $_FILES["file"]["name"];
 	move_uploaded_file($_FILES["file"]["tmp_name"], "../../images/barang/".$nama_file);
+
+	$update_gambar = ", gambar='$nama_file'";
+}
+
+
 
 if($button == "Add"){
 
@@ -19,11 +27,17 @@ if($button == "Add"){
 								 		VALUES ('$nama_barang', '$kategori_id', '$spesifikasi', '$nama_file', '$harga', '$stok', '$status')");
 
 }
-// else if($button == "Update"){
+else if($button == "Update"){
 
-// 	$kategori_id = $_GET['kategori_id'];
-// 	mysqli_query($koneksi, "UPDATE kategori SET kategori='$kategori',
-// 											  	status='$status' WHERE kategori_id='$kategori_id'");
-// }
+	$barang_id = $_GET['barang_id'];
+	mysqli_query($koneksi, "UPDATE barang SET kategori_id='$kategori_id',
+											  nama_barang='$nama_barang',
+											  spesifikasi='$spesifikasi',
+											  harga='$harga',
+											  stok='$stok',
+											  stok='$stok',
+											  status='$status' 
+											  $update_gambar WHERE barang_id='$barang_id'");
+}
 header("location:".BASE_URL."index.php?page=my_profile&module=barang&action=list");
 ?>
