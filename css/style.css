@@ -135,15 +135,61 @@ body{
 	background: white;
 }
 /*tambahan untuk tombol button*/
-a.tombol-action {
-    float: right;
+/*a.tombol-action {
+    float: left;
     background: #1e5474;
-    padding: 4px 6px;
+    padding: 3px 6px;
     border-radius: 3px;
     color: white;
     text-decoration: none;
 }
 a.tombol-action:hover{
 	background: orange;
+}*/
+
+.table-list{
+	width: 100%;
+	border-collapse: collapse;
 }
 
+.table-list .baris-title{
+	background: #E6E6E6;
+}
+
+.table-list tr th,
+.table-list tr td{
+	padding: 10px 7px;
+}
+.kolom-nomor {
+    width: 20px;
+    text-align: center;
+}
+.kiri {
+    text-align: left;
+}
+
+.tengah {
+    text-align: center;
+}
+.kanan {
+    text-align: right;
+}
+
+#frame-tambah {
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.tombol-action {
+    background: #1e5474;
+    color: white;
+    padding: 7px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 3px;
+    font-size: 9px;
+}
+.tombol-action:hover{
+    background: orange;
+}
