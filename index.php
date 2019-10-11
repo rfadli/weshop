@@ -4,7 +4,8 @@ session_start();
 include_once("function/koneksi.php");
 include_once("function/helper.php");
 //echo BASE_URL;
-$page = isset($_GET['page']) ? $_GET['page'] : false;
+$page        = isset($_GET['page']) ? $_GET['page'] : false;
+$kategori_id = isset($_GET['kategori_id']) ? $_GET['kategori_id'] : false;
 //echo $page;
 
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
@@ -54,9 +55,9 @@ $level   = isset($_SESSION['level']) ? $_SESSION['level'] : false;
                     $filename = "$page.php";
                     //echo $filename;
                     if(file_exists($filename)){
-                        include_once($filename);
+                        include_once($filename);                        
                     }else{
-                        echo "Maaf, File Tersebut Tidak Ada Di Dalam Sistem";
+                        include_once("main.php");
                     }
                 ?>
             </div>
