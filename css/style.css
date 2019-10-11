@@ -6,7 +6,7 @@ body{
 	margin: 0px;
 }
 #containter{
-	width: 1100px;
+	width: 1125px;
 	height: auto;
 	margin: 0px auto;
 	padding: 10px;
@@ -214,7 +214,8 @@ a.tombol-action:hover{
 	color: #1e5474;
 	text-decoration: none;
 }
-#menu-kategori ul li a:hover{
+#menu-kategori ul li a:hover,
+#menu-kategori ul li a.active{
 	background: #e8e8e8;
 }
 #kanan{
@@ -245,7 +246,7 @@ a.tombol-action:hover{
 }
 #kanan #frame-barang ul li a img{
 	display: block;
-	width: 240px;
+	width: 250px;
 }
 #kanan #frame-barang ul li .keterangan-gambar{
 	border-top: 1px solid #E6E6E6;
