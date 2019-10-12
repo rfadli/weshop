@@ -251,7 +251,7 @@ a.tombol-action:hover{
 #kanan #frame-barang ul li .keterangan-gambar{
 	border-top: 1px solid #E6E6E6;
 	border-bottom: 1px solid #E6E6E6;
-	padding: 10px 0px;
+	padding: 25px 0px;
 	height: 50px;
 }
 #kanan #frame-barang ul li .keterangan-gambar p{
@@ -280,4 +280,8 @@ a.tombol-action:hover{
 }
 #kanan #frame-barang ul li .button-add-cart a:hover{
 	background: orange;
+}
+#detail-barang{
+	background: white;
+	padding: 15px;
 }
