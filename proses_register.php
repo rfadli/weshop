@@ -3,14 +3,14 @@
 include_once("function/koneksi.php");
 include_once("function/helper.php");
 
-$level = "customor";
-$status = "on";
+$level 		  = "customor";
+$status 	  = "on";
 $nama_lengkap = $_POST['nama_lengkap'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$alamat = $_POST['alamat'];
-$password = $_POST['password'];
-$re_password = $_POST['re_password'];
+$email 		  = $_POST['email'];
+$phone 		  = $_POST['phone'];
+$alamat 	  = $_POST['alamat'];
+$password 	  = $_POST['password'];
+$re_password  = $_POST['re_password'];
 
 unset($_POST['password']);
 unset($_POST['re_password']);

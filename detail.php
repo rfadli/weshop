@@ -14,13 +14,13 @@
 			echo "<div id='detail-barang'>";
 			/**/
 			echo "<h2>$row[nama_barang]</h2>";	
-			echo "<div id='fram-gambar'>";	
+			echo "<div id='frame-gambar'>";	
 			echo "<img src='".BASE_URL."images/barang/$row[gambar]'/>";		
 			echo "</div>";
 			/**/
-			echo "<div id='fram-harga'>";
+			echo "<div id='frame-harga'>";
 			echo "<span>".rupiah($row['harga'])."</span>";
-			echo "<a href='".BASE_URL."tambah_barang.php?barang_id=$row[barang_id]'>+ Add To Cart </a>";	
+			echo "<a href='".BASE_URL."tambah_keranjang.php?barang_id=$row[barang_id]'>+ Add To Cart </a>";	
 			echo "</div>";
 			/**/
 			echo "<div id='keterangan'>";

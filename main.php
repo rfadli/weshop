@@ -49,7 +49,7 @@
 			 	echo "<div>";
 
 			 	echo "<div class='button-add-cart'>";
-			 	echo "<a href='".BASE_URL."tambah_barang.php?barang_id=$row[barang_id]'>+ Add To Cart </a>";
+			 	echo "<a href='".BASE_URL."tambah_keranjang.php?barang_id=$row[barang_id]'>+ Add To Cart </a>";
 			 	echo "</div>";
 
 			 $no++;

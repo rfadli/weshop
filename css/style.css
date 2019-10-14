@@ -152,6 +152,10 @@ a.tombol-action:hover{
 	border-collapse: collapse;
 }
 
+.table-list tr{
+	border-bottom: 1px solid #1e5474;
+}
+
 .table-list .baris-title{
 	background: #E6E6E6;
 }
@@ -281,7 +285,54 @@ a.tombol-action:hover{
 #kanan #frame-barang ul li .button-add-cart a:hover{
 	background: orange;
 }
-#detail-barang{
-	background: white;
-	padding: 15px;
+/**/
+#detail-barang {
+    background: white;
+    padding: 15px;
+}
+#detail-barang h2{
+	margin-top: 0px;
+}
+
+#detail-barang #frame-gambar{
+	background: #FBFBFB;
+	padding: 20px;
+}
+#detail-barang #frame-gambar img{
+	display: block;
+	margin: 0px auto;
+}
+#detail-barang #frame-harga{
+	margin: 15px 0px;
+}
+#detail-barang #frame-harga span{
+	font-size: 15px;
+	font-weight: bold;
+	color: red;
+}
+#detail-barang #frame-harga a{
+	background: #1e5474;
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px;
+	display: inline-block;
+	float: right;
+	border-radius: 3px;
+}
+#detail-barang #frame-harga a:hover{
+	background: orange;
+}
+#detail-barang #keterangan{
+	margin: 20px 0px;
+}
+.total-barang {
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+    vertical-align: top;
+}
+.update-quantity {
+    width: 30px;
+    text-align: center;
 }
