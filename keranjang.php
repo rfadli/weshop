@@ -18,6 +18,8 @@ if($totalBarang == 0){
 	foreach ($keranjang as $key => $value) {
 		$barang_id = $key;
 
+		//var_dump($barang_id);
+
 		$nama_barang = $value["nama_barang"];
 		$quantity 	 = $value["quantity"];
 		$gambar 	 = $value["gambar"];
@@ -31,7 +33,7 @@ if($totalBarang == 0){
 		echo "<td class='kiri'>".$nama_barang."</td>";
 		echo "<td class='tengah'><input type='text' name='$barang_id' value='$quantity' class='update-quantity' /></td>";
 		echo "<td class='kanan'>".rupiah($harga)."</td>";
-		echo "<td class='kanan'>".rupiah($total)."</td>";
+		echo "<td class='kanan hapus_item'>".rupiah($total)."<a href='".BASE_URL."hapus_item.php?barang_id=$barang_id'>X</a></td>";
 		echo "</tr>";
 
 	$no++;
@@ -51,9 +53,9 @@ if($totalBarang == 0){
 			method: "POST",
 			url: "update_keranjang.php",
 			data: "barang_id="+barang_id+"&value="+value
-		});
+		})
 		.done(function(data){
-			location.reload()
+			location.reload();
 		});
 	});
 </script>
