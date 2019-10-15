@@ -15,6 +15,8 @@ if($totalBarang == 0){
 	echo "<th class='kanan'>Total</th>";
 	echo "</tr>";
 
+	$subtotal = 0;
+
 	foreach ($keranjang as $key => $value) {
 		$barang_id = $key;
 
@@ -26,6 +28,7 @@ if($totalBarang == 0){
 		$harga 		 = $value["harga"];
 
 		$total = $quantity * $harga;
+		$subtotal = $subtotal + $total;
 
 		echo "<tr>";
 		echo "<td class='tengah'>".$no."</th>";
@@ -39,7 +42,17 @@ if($totalBarang == 0){
 	$no++;
 	}
 
+	echo "<tr>";
+	echo "<td colspan='5' class='kanan'><b>Sub Total</b></td>";
+	echo "<td class='kanan'><b>".rupiah($subtotal)."</b></td>";
+	echo "</tr>";
+
 	echo "</table>";
+
+	echo "<div id='frame-button-keranjang'>";
+	echo "<a id='lanjut-belanja' href='".BASE_URL."index.php'> < Lanjut Belanja </a>";
+	echo "<a id='lanjut-pemesanan' href='".BASE_URL."index.php?page=data_pemesan'> Lanjut Pemesanan > </a>";
+	echo "</div>";
 }
 ?>
 

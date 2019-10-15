@@ -347,3 +347,18 @@ a.tombol-action:hover{
 	text-decoration: none;
 	color: #1e5474;
 }
+
+#frame-button-keranjang a{
+	background: #1e5474;
+	color: white;
+	text-decoration: none;
+	padding: 7px 20px;
+	display: inline-block;
+	margin-top: 15px;
+}
+#lanjut-belanja{
+	float: left;
+}
+#lanjut-pemesanan{
+	float: right;
+}
