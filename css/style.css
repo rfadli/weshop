@@ -362,3 +362,25 @@ a.tombol-action:hover{
 #lanjut-pemesanan{
 	float: right;
 }
+#frame-data-pengiriman {
+	float: left;
+	width: 500px;
+	margin-right: 20px;
+	margin-left: 10px;
+}
+#frame-form-pengiriman{
+	border: 1px solid grey;
+	padding: 25px;
+}
+#freme-data-detail {
+	float: left;
+	width: 560px;
+}
+#frame-detail-order {
+	border: 1px solid grey;
+}
+.label-data-pengiriman{
+	border: 1px solid grey;
+	padding: 10px 7px;
+	margin: 0px;
+}

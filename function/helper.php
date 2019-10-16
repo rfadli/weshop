@@ -8,7 +8,7 @@
 
     function kategori($kategori_id = false){
 
-	    global $koneksi;
+	    global $koneksi; //mengambil / menangkap variabel koneksi secara menyeluruh / diluar fungsi
 	    	
 	    $string ="<div id='menu-kategori'>";
 			$string .= "<ul>";

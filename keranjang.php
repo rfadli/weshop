@@ -42,10 +42,10 @@ if($totalBarang == 0){
 	$no++;
 	}
 
-	echo "<tr>";
-	echo "<td colspan='5' class='kanan'><b>Sub Total</b></td>";
-	echo "<td class='kanan'><b>".rupiah($subtotal)."</b></td>";
-	echo "</tr>";
+		echo "<tr>";
+		echo "<td colspan='5' class='kanan'><b>Sub Total</b></td>";
+		echo "<td class='kanan'><b>".rupiah($subtotal)."</b></td>";
+		echo "</tr>";
 
 	echo "</table>";
 

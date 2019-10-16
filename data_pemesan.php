@@ -1,6 +1,15 @@
+<?php
+if($user_id == false){
+
+	$_SESSION["proses_pesanan"] = true;
+	header("location:".BASE_URL."index.php?page=login");
+	
+	exit;
+}
+?>
 <div id="frame-data-pengiriman">
 
-	<h3>Alamat Pengiriman Barang</h3>
+	<h3 class="label-data-pengiriman">Alamat Pengiriman Barang</h3>
 
 	<div id="frame-form-pengiriman">
 		
@@ -48,7 +57,7 @@
 </div>
 
 <div id="freme-data-detail">
-	<h3>Detail Order</h3>
+	<h3 class="label-data-pengiriman">Detail Order</h3>
 
 	<div id="frame-detail-order">
 		<table class="table-list">
@@ -58,6 +67,7 @@
 				<th class="kanan">Total</th>
 			</tr>
 			<?php
+			$subtotal = 0;
 			foreach ($keranjang as $key => $value) {
 
 				$barang_id = $key;
@@ -67,6 +77,7 @@
 				$quantity = $value['quantity'];
 
 				$total = $quantity * $harga;
+				$subtotal = $subtotal + $total;
 
 				echo "<tr>";
 				echo "<td class='kiri'>".$nama_barang."</td>";
@@ -74,6 +85,11 @@
 				echo "<td class='kanan'>".rupiah($total)."</td>";
 				echo "</tr>";
 			}
+
+				echo "<tr>";
+				echo "<td colspan='2' class='kanan'><b>Sub Total</b></td>";
+				echo "<td class='kanan'><b>".rupiah($subtotal)."</b></td>";
+				echo "</tr>";
 			?>
 		</table>	
 	</div>
