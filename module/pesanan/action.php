@@ -22,8 +22,27 @@ if($button == "Konfirmasi"){
 		mysqli_query($koneksi, "UPDATE pesanan SET status='1' WHERE pesanan_id='$pesanan_id'");
 	}
 
-	header("location:".BASE_URL."index.php?page=my_profile&module=pesanan&action=list");
 
+
+}else if($button == "Edit Status"){
+	$status = $_POST["status"];
+
+	mysqli_query($koneksi, "UPDATE pesanan SET status='$statu' WHERE pesanan_id='$pesanan_id'");
+
+	if($status == "2"){
+
+		$query = mysqli_query($koneksi, "UPDATE pesanan SET status='$status' WHERE pesanan_id='$pesanan_id'");
+		while ($row = mysqli_fetch_assoc($query)) {
+
+			$barang_id = $row["barang_id"];
+			$quantity  = $row["quantity"];
+
+			mysqli_query($koneksi, "UPDATE barang SET stok=stok-$quantity WHERE barang_id='$barang_id'");
+
+		}
+	}
 }
+
+header("location:".BASE_URL."index.php?page=my_profile&module=pesanan&action=list");
 
 ?>
