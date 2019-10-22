@@ -25,7 +25,7 @@ if($barang_id){
 	$button   	  = "Update";
 
 	$keterangan_gambar = "(Klik pilih gambar jika ingin mengganti gambar di samping)";
-	$path_image = "<img src='".BASE_URL."images/barang/$gambar' style='width: 200px;vertical-align: middle;' />";
+	$gambar = "<img src='".BASE_URL."images/barang/$gambar' style='width: 200px;vertical-align: middle;' />";
 }
 
 ?>
@@ -81,7 +81,7 @@ if($barang_id){
 	<div class="element-form">
 			<label>Gambar Produk <?php echo $keterangan_gambar; ?></label>
 			<span>
-				<input type="file" name="file" /> <?php echo $path_image; ?>
+				<input type="file" name="file" /> <?php echo $gambar; ?>
 			</span>
 	</div>
 
