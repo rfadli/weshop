@@ -51,7 +51,7 @@ if($totalBarang == 0){
 
 	echo "<div id='frame-button-keranjang'>";
 	echo "<a id='lanjut-belanja' href='".BASE_URL."index.php'> < Lanjut Belanja </a>";
-	echo "<a id='lanjut-pemesanan' href='".BASE_URL."index.php?page=data_pemesan'> Lanjut Pemesanan > </a>";
+	echo "<a id='lanjut-pemesanan' href='".BASE_URL."data_pemesan.html'> Lanjut Pemesanan > </a>";
 	echo "</div>";
 }
 ?>
