@@ -4,7 +4,7 @@
 
 <?php
 	$pagination = isset($_GET["pagination"]) ? $_GET["pagination"] : 1;
-	$data_per_halaman = 3;
+	$data_per_halaman = 5;
 	$mulai_dari = ($pagination-1) * $data_per_halaman;
 
 	$queryKategori = mysqli_query($koneksi, "SELECT * FROM kategori LIMIT $mulai_dari, $data_per_halaman");
@@ -21,7 +21,7 @@
 				<th class='tengah'>Action</th>
 			  </tr>";
 
-		$no=1;
+		$no=1 + $mulai_dari;
 		while($row = mysqli_fetch_assoc($queryKategori)){
 
 			echo "<tr>
@@ -38,26 +38,6 @@
 		echo "</table>";
 
 		$queryHitungKategori = mysqli_query($koneksi, "SELECT * FROM kategori");
-		$total_data = mysqli_num_rows($queryHitungKategori);
-		$total_halaman = ceil($total_data / $data_per_halaman);
-
-		echo "<ul class='pagination'>";
-		for($i=1; $i<=$total_halaman; $i++)
-		{
-
-			if($pagination == $i)
-			{
-				
-				echo "<li><a class='active' href='".BASE_URL."index.php?page=my_profile&module=kategori&action=list&pagination=$i'>".$i."</a></li>";
-
-			}
-			else
-			{
-
-				echo "<li><a href='".BASE_URL."index.php?page=my_profile&module=kategori&action=list&pagination=$i'>".$i."</a></li>";
-
-			}
-		}
-		echo "</ul>";
+		pagination($queryHitungKategori, $data_per_halaman, $pagination, "index.php?page=my_profile&module=kategori&action=list");
 	}
 ?>

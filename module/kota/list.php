@@ -3,8 +3,11 @@
 </div>
 
 <?php
+	$pagination = isset($_GET["pagination"]) ? $_GET["pagination"] : 1;
+	$data_per_halaman = 10;
+	$mulai_dari = ($pagination-1) * $data_per_halaman;
 
-	$queryKota = mysqli_query($koneksi, "SELECT * FROM kota ORDER BY kota ASC");
+	$queryKota = mysqli_query($koneksi, "SELECT * FROM kota ORDER BY kota ASC LIMIT $mulai_dari, $data_per_halaman");
 	
 	if(mysqli_num_rows($queryKota) == 0){
 		echo "<h3>Saat ini belum ada nama kota yang didalam database.</h3>";
@@ -36,5 +39,8 @@
 			}
 		
 		echo "</table>";
+
+		$queryHitungKota = mysqli_query($koneksi, "SELECT * FROM kota");
+		pagination($queryHitungKota, $data_per_halaman, $pagination, "index.php?page=my_profile&module=kota&action=list");
 	}
 ?>
