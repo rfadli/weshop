@@ -26,7 +26,7 @@
 				$kategori_id = "AND barang.kategori_id='$kategori_id'";		
 			}
 			
-			$query = mysqli_query($koneksi, "SELECT barang.*, kategori.kategori FROM barang JOIN kategori ON barang.kategori_id=kategori.kategori_id WHERE barang.status='on' $kategori_id ORDER BY rand() DESC LIMIT 9");
+			$query = mysqli_query($koneksi, "SELECT barang.*, kategori.kategori FROM barang JOIN kategori ON barang.kategori_id=kategori.kategori_id WHERE barang.status='on' $kategori_id ORDER BY rand() DESC LIMIT 100");
 			
 			$no = 1;
 			while ($row = mysqli_fetch_array($query)) {
@@ -60,6 +60,7 @@
 			 $no++;
 				
 			}
+
 			?>
 		</ul>
 	</div>

@@ -181,7 +181,7 @@ a.tombol-action:hover{
 
 #frame-tambah {
     margin-bottom: 10px;
-    text-align: right;
+    overflow: hidden;
 }
 
 .tombol-action {
@@ -193,6 +193,7 @@ a.tombol-action:hover{
     text-decoration: none;
     margin-right: 3px;
     font-size: 10px;
+    display: block;
 }
 .tombol-action:hover{
     background: orange;
@@ -397,9 +398,16 @@ ul.pagination li a{
 	border: 1px solid #1e5475;
 	padding: 5px 7px;
 	text-decoration: none;
+	display: block;
 }
 ul.pagination li a:hover,
 ul.pagination li a.active{
 	font-weight: bold;
 	background: orange;
+}
+#frame-tambah #left{
+	float: left;
+}
+#frame-tambah #right{
+	float: right;
 }

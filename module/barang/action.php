@@ -4,13 +4,22 @@ include_once("../../function/helper.php");
 
 admin_only("barang", $level);
 
-$nama_barang =  $_POST['nama_barang'];
-$kategori_id =  $_POST['kategori_id'];
-$spesifikasi =  $_POST['spesifikasi'];
-$stok		 =  $_POST['stok'];
-$harga		 =  $_POST['harga'];
-$status		 =  $_POST['status'];
-$button		 =  $_POST['button'];
+$button   =  isset($_POST['button']) ? $_POST['button'] : $_GET['button'];
+$barang_id =  isset($_GET['barang_id']) ? $_GET['barang_id'] : "";
+
+$nama_barang = isset($_POST['nama_barang']) ? $_POST['nama_barang'] : false;
+$kategori_id = isset($_POST['kategori_id']) ? $_POST['kategori_id'] : false;
+$spesifikasi = isset($_POST['spesifikasi']) ? $_POST['spesifikasi'] : false;
+$stok = isset($_POST['stok']) ? $_POST['stok'] : false;
+$harga = isset($_POST['harga']) ? $_POST['harga'] : false;
+$status = isset($_POST['status']) ? $_POST['status'] : false;
+
+// $nama_barang =  $_POST['nama_barang'];
+// $kategori_id =  $_POST['kategori_id'];
+// $spesifikasi =  $_POST['spesifikasi'];
+// $stok		 =  $_POST['stok'];
+// $harga		 =  $_POST['harga'];
+// $status		 =  $_POST['status'];
 $update_gambar = "";
 
 if(!empty($_FILES["file"]["name"])){
@@ -31,7 +40,7 @@ if($button == "Add"){
 }
 else if($button == "Update"){
 
-	$barang_id = $_GET['barang_id'];
+	// $barang_id = $_GET['barang_id'];
 	mysqli_query($koneksi, "UPDATE barang SET kategori_id='$kategori_id',
 											  nama_barang='$nama_barang',
 											  spesifikasi='$spesifikasi',
@@ -40,6 +49,11 @@ else if($button == "Update"){
 											  stok='$stok',
 											  status='$status' 
 											  $update_gambar WHERE barang_id='$barang_id'");
+}
+else if($button == "Delete"){
+
+	// $kategori_id = $_GET['kategori_id'];
+	mysqli_query($koneksi, "DELETE FROM barang WHERE barang_id='$barang_id'");
 }
 header("location:".BASE_URL."index.php?page=my_profile&module=barang&action=list");
 ?>
